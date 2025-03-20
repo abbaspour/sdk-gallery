@@ -1,3 +1,3 @@
 # Auth0 NextJS samples
 
-* [basic](./minimal)
+* [minimal](./minimal/readme.md)

@@ -1,4 +1,4 @@
-# Basic Auth0 NextJS example
+# Minimal Auth0 NextJS example
 
 ```bash
 cd ../../tf
@@ -7,5 +7,5 @@ make
 make apply
 
 cd -
-npm run dev
+make 
 ```
