@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.abbaspour.gallery</groupId>
+    <groupId>net.abbaspour.auth0.gallery</groupId>
     <artifactId>sdk-gallery</artifactId>
     <version>1.0.0</version>
-    <packaging>pom</packaging> <!-- Defines it as a parent project -->
+    <packaging>pom</packaging>
 
     <modules>
         <module>./java/java-minimal-jetty</module>

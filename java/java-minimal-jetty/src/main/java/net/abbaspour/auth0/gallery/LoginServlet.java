@@ -1,4 +1,4 @@
-package net.abbaspour.gallery;
+package net.abbaspour.auth0.gallery;
 
 import com.auth0.AuthenticationController;
 
