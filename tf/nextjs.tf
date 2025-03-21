@@ -34,7 +34,7 @@ resource "random_string" "auth0_secret" {
 resource "local_sensitive_file" "nextjs-minimal-env-local" {
   filename = "${path.module}/../next.js/minimal/.env.local"
   content = <<EOF
-# Created by terraform"
+# Created by terraform
 AUTH0_DOMAIN=${var.auth0_domain}
 AUTH0_CLIENT_ID=${auth0_client.nextjs-minimal.client_id}
 AUTH0_CLIENT_SECRET=${data.auth0_client.nextjs-minimal.client_secret}
