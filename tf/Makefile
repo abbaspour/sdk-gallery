@@ -5,7 +5,7 @@ TF=terraform
 
 main: plan
 
-plan: .terraform
+plan:
 	@TF_LOG=$(LOG_LEVEL) $(TF) plan -out $(PLAN_FILE)
 
 apply:
