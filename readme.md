@@ -10,4 +10,4 @@ Collection of sample codes using [Auth0 SDK libraries](https://auth0.com/docs/li
 * Password: see `./tf/terraform.auto.tfvars` 
 
 ## SDK Graph
-![SDK graph](./graph/authentication.svg)
+![SDK graph](./graph/authentication.png)
