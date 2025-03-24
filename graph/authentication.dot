@@ -1,0 +1,158 @@
+digraph "Authentication" {
+    rankdir=LR;
+    ratio=0.8;
+    ranksep=1;  // Adjust vertical spacing
+    //nodesep=3; // Adjust horizontal spacing
+    "Authentication";
+    //dpi=300;
+    //size="16,9";
+    splines=true         // Smooths out edges
+    //nodesep=1.5          // Increases horizontal spacing
+    //ranksep=2            // Increases vertical spacing
+    margin=0.2           // Adds some padding around the edges
+    node [fontsize=20];
+    edge [fontsize=16];
+
+    "native";
+    "Auth0.Android" [URL="https://github.com/auth0/Auth0.Android", target="_blank", style=filled, fillcolor=lightblue];
+    "Guardian.Android" [URL="https://github.com/auth0/Guardian.Android", target="_blank", style=filled, fillcolor=lightyellow];
+    "auth0-flutter" [URL="https://github.com/auth0/auth0-flutter", target="_blank", style=filled, fillcolor=lightblue];
+    "Auth0.swift" [URL="https://github.com/auth0/Auth0.swift", target="_blank", style=filled, fillcolor=lightblue];
+    "SimpleKeychain" [URL="https://github.com/auth0/SimpleKeychain", target="_blank", style=filled, fillcolor=lightgreen];
+    "JWTDecode.Android" [URL="https://github.com/auth0/JWTDecode.Android", target="_blank", style=filled, fillcolor=lightgreen];
+    "JWTDecode.swift" [URL="https://github.com/auth0/JWTDecode.swift", target="_blank", style=filled, fillcolor=lightgreen];
+    "Guardian.swift" [URL="https://github.com/auth0/https://github.com/auth0/Guardian.swift", target="_blank", style=filled, fillcolor=lightyellow];
+    "react-native-auth0" [URL="https://github.com/auth0/react-native-auth0", target="_blank", style=filled, fillcolor=lightblue];
+    "browser-side";
+    "server-side";
+    "node.js";
+    "java";
+    "auth0-java-mvc-common" [URL="https://github.com/auth0/auth0-java-mvc-common", target="_blank", style=filled, fillcolor=lightblue];
+    "auth0-java" [URL="https://github.com/auth0/auth0-java", target="_blank", style=filled, fillcolor=lightblue];
+    "java-jwt" [URL="https://github.com/auth0/java-jwt", target="_blank", style=filled, fillcolor=lightgreen];
+    "jwks-rsa-java" [URL="https://github.com/auth0/jwks-rsa-java", target="_blank", style=filled, fillcolor=lightgreen];
+    "auth0-spring-security-api" [URL="https://github.com/auth0/auth0-spring-security-api", target="_blank", style=filled, fillcolor=violet];
+    "python";
+    "auth0-python" [URL="https://github.com/auth0/auth0-python", target="_blank", style=filled, fillcolor=lightblue];
+    "php";
+    "auth0-php" [URL="https://github.com/auth0/auth0-PHP", target="_blank", style=filled, fillcolor=lightblue];
+    "laravel-auth0" [URL="https://github.com/auth0/laravel-auth0", target="_blank", style=filled, fillcolor=lightblue];
+    "symfony" [URL="https://github.com/auth0/symfony", target="_blank", style=filled, fillcolor=lightblue];
+    "wordpress" [URL="https://github.com/auth0/wordpress", target="_blank", style=filled, fillcolor=lightblue];
+    "C#";
+    "auth0-oidc-client-net" [URL="https://github.com/auth0/auth0-oidc-client-net", target="_blank", style=filled, fillcolor=lightblue];
+    "auth0.net" [URL="https://github.com/auth0/auth0.net", target="_blank", style=filled, fillcolor=lightblue];
+    "auth0-aspnetcore-authentication" [URL="https://github.com/auth0/auth0-aspnetcore-authentication", target="_blank", style=filled, fillcolor=lightblue];
+    "go";
+    "go-jwt-middleware" [URL="https://github.com/auth0/go-jwt-middleware", target="_blank", style=filled, fillcolor=violet];
+    "go-auth0" [URL="https://github.com/auth0/go-auth0", target="_blank", style=filled, fillcolor=lightblue];
+    "ruby";
+    "omniauth-auth0" [URL="https://github.com/auth0/omniauth-auth0", target="_blank", style=filled, fillcolor=lightblue];
+    "ruby-auth0" [URL="https://github.com/auth0/ruby-auth0", target="_blank", style=filled, fillcolor=lightblue];
+    "node-jwks-rsa" [URL="https://github.com/auth0/node-jwks-rsa", target="_blank", style=filled, fillcolor=lightgreen];
+    "jsonwebtoken" [URL="https://github.com/auth0/node-jsonwebtoken", target="_blank", style=filled, fillcolor=lightgreen];
+    "express-jwt-authz" [URL="https://github.com/auth0/express-jwt-authz", target="_blank", style=filled, fillcolor=violet];
+    "node-oauth2-jwt-bearer" [URL="https://github.com/auth0/node-oauth2-jwt-bearer/", target="_blank", style=filled, fillcolor=violet];
+    "express-openid-connect" [URL="https://github.com/auth0/express-openid-connect", target="_blank", style=filled, fillcolor=lightblue];
+    "auth0-spa-js" [URL="https://github.com/auth0/auth0-spa-js", target="_blank", style=filled, fillcolor=lightblue];
+    "auth0-react" [URL="https://github.com/auth0/auth0-react", target="_blank", style=filled, fillcolor=lightblue];
+    "auth0-vue" [URL="https://github.com/auth0/auth0-vue", target="_blank", style=filled, fillcolor=lightblue];
+    "nextjs-auth0" [URL="https://github.com/auth0/nextjs-auth0/", target="_blank", style=filled, fillcolor=lightblue];
+    "auth0-angular" [URL="https://github.com/auth0/auth0-angular", target="_blank", style=filled, fillcolor=lightblue];
+    "auth0.js" [URL="https://github.com/auth0/auth0.js", target="_blank", style=filled, fillcolor=lightblue];
+    "jwt-decode" [URL="https://github.com/auth0/jwt-decode", target="_blank", style=filled, fillcolor=lightgreen];
+    "lock" [URL="https://github.com/auth0/lock", target="_blank", style=filled, fillcolor=gold];
+    "Lock.Android" [URL="https://github.com/auth0/Lock.Android", target="_blank", style=filled, fillcolor=gold];
+    "Lock.swift" [URL="https://github.com/auth0/Lock.swift", target="_blank", style=filled, fillcolor=gold];
+    "node-auth0" [style=filled, fillcolor=lightblue];
+    "passport-auth0" [URL="https://github.com/auth0/passport-auth0", target="_blank", style=filled, fillcolor=lightblue];
+    "idtoken-verifier" [URL="https://github.com/auth0/idtoken-verifier", target="_blank", style=filled, fillcolor=lightgreen];
+    //"JSR" [style=filled, fillcolor=red];
+
+    "Authentication" -> "native";
+    "Authentication" -> "browser-side";
+    "Authentication" -> "server-side";
+    "server-side" -> "node.js";
+    "server-side" -> "java";
+    //"java" -> "oss-library-gradle-plugin";
+    "java" -> "java-jwt";
+    "java" -> "jwks-rsa-java";
+    "java-jwt" -> "auth0-java";
+    "auth0-java" -> "auth0-java-mvc-common";
+    "jwks-rsa-java" -> "auth0-java-mvc-common";
+    "java" -> "auth0-spring-security-api";
+    "server-side" -> "python";
+    "python" -> "auth0-python";
+    "server-side" -> "php";
+    "server-side" -> "C#";
+    "server-side" -> "go";
+    "server-side" -> "ruby";
+    //"server-side" -> "JSR";
+
+    "browser-side" -> "auth0-spa-js";
+    "browser-side" -> "jwt-decode";
+    "browser-side" -> "auth0-flutter" [style=dotted];
+
+    "browser-side" -> "idtoken-verifier";
+    "idtoken-verifier" -> "auth0.js";
+    "auth0.js" -> "lock";
+    "node.js" -> "node-auth0";
+    "node.js" -> "passport-auth0";
+
+    "node.js" -> "jsonwebtoken";
+    "node.js" -> "express-jwt-authz";
+    "node.js" -> "node-oauth2-jwt-bearer";
+    "node.js" -> "express-openid-connect";
+    "node.js" -> "nextjs-auth0";
+    "jsonwebtoken" -> "node-jwks-rsa";
+
+    "auth0-spa-js" -> "auth0-react";
+    "auth0-spa-js" -> "auth0-vue";
+    "auth0-spa-js" -> "auth0-angular";
+
+    "go" -> "go-jwt-middleware";
+    "go" -> "go-auth0";
+
+    "ruby" -> "omniauth-auth0";
+    "ruby" -> "ruby-auth0";
+
+    "php" -> "auth0-php";
+    "auth0-php" -> "laravel-auth0";
+    "auth0-php" -> "symfony";
+    "auth0-php" -> "wordpress";
+
+    "C#" -> "auth0-oidc-client-net";
+    "C#" -> "auth0.net";
+    "C#" -> "auth0-aspnetcore-authentication";
+
+    "native" -> "Android";
+    "native" -> "iOS";
+
+    "Android" -> "auth0-flutter";
+    "Android" -> "Auth0.Android";
+    "Android" -> "JWTDecode.Android";
+    "Android" -> "react-native-auth0";
+    "Android" -> "Guardian.Android";
+    "Android" -> "Lock.Android";
+    //"jwt-decode" -> "react-native-auth0";
+
+    "iOS" -> "auth0-flutter";
+    "iOS" -> "Auth0.swift";
+    "iOS" -> "SimpleKeychain";
+    "iOS" -> "JWTDecode.swift";
+    "iOS" -> "react-native-auth0";
+    "iOS" -> "Guardian.swift";
+    "iOS" -> "Lock.swift";
+
+    // Legend
+    subgraph cluster_legend {
+    label="Legend";
+    style=dashed;
+    "Utility                 " [shape=box, style=filled, fillcolor=lightgreen];
+    "Relying Party (RP)      " [shape=box, style=filled, fillcolor=lightblue];
+    "Resource Server (RS)    " [shape=box, style=filled, fillcolor=violet];
+    //"Auth0 Customisation (OP)" [shape=box, style=filled, fillcolor=gold];
+    "Guardian" [shape=box, style=filled, fillcolor=lightyellow];
+    //"Missing" [shape=box, style=filled, fillcolor=red];
+    }
+}
