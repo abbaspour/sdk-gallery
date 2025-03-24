@@ -4,8 +4,8 @@ digraph "Authentication" {
     ranksep=1;  // Adjust vertical spacing
     //nodesep=3; // Adjust horizontal spacing
     "Authentication";
-    //dpi=300;
-    //size="16,9";
+    dpi=60;
+    #size="9,4";
     splines=true         // Smooths out edges
     //nodesep=1.5          // Increases horizontal spacing
     //ranksep=2            // Increases vertical spacing
@@ -67,7 +67,10 @@ digraph "Authentication" {
     "node-auth0" [style=filled, fillcolor=lightblue];
     "passport-auth0" [URL="https://github.com/auth0/passport-auth0", target="_blank", style=filled, fillcolor=lightblue];
     "idtoken-verifier" [URL="https://github.com/auth0/idtoken-verifier", target="_blank", style=filled, fillcolor=lightgreen];
-    //"JSR" [style=filled, fillcolor=red];
+    "auth0-server" [URL="https://github.com/atko-cic/auth0-server-js/tree/early-access", target="_blank" ];
+    "auth0-auth-js" [URL="https://github.com/atko-cic/auth0-server-js/tree/early-access/packages/auth0-auth-js", target="_blank", style=filled, fillcolor=lightgreen];
+    "auth0-server-js" [URL="https://github.com/atko-cic/auth0-server-js/tree/early-access/packages/auth0-server-js", target="_blank", style=filled, fillcolor=lightblue];
+    "auth0-api-js" [URL="https://github.com/atko-cic/auth0-server-js/tree/early-access/packages/auth0-api-js", target="_blank", style=filled, fillcolor=violet];
 
     "Authentication" -> "native";
     "Authentication" -> "browser-side";
@@ -104,7 +107,12 @@ digraph "Authentication" {
     "node.js" -> "node-oauth2-jwt-bearer";
     "node.js" -> "express-openid-connect";
     "node.js" -> "nextjs-auth0";
+    "node.js" -> "auth0-server";
     "jsonwebtoken" -> "node-jwks-rsa";
+
+    "auth0-server" -> "auth0-auth-js";
+    "auth0-server" -> "auth0-api-js";
+    "auth0-auth-js" -> "auth0-server-js";
 
     "auth0-spa-js" -> "auth0-react";
     "auth0-spa-js" -> "auth0-vue";
