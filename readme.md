@@ -62,7 +62,7 @@ and [Auth0 Terraform provider](https://registry.terraform.io/providers/auth0/aut
 <tbody>
     <tr>
         <!-- SDK -->
-        <td> <a href="https://github.com/auth0/auth0-java">auth0-java</a></td>
+        <td><a href="https://github.com/auth0/auth0-java">auth0-java</a></td>
         <!-- OAuth 2.1 -->
         <td> :white_check_mark: </td>
         <!-- JWT --> 
@@ -99,11 +99,100 @@ and [Auth0 Terraform provider](https://registry.terraform.io/providers/auth0/aut
         <!-- BCLO -->
         <td> :x: </td>
     </tr>
+    <tr>
+        <!-- SDK -->
+        <td> </td>
+        <!-- OAuth 2.1 -->
+        <td> </td>
+        <!-- JWT --> 
+        <td>  </td>
+        <!-- PKCE --> 
+        <td> </td>
+        <!-- JWT-CA -->
+        <td> 
+        </td>
+        <!-- DAG -->
+        <td> 
+        </td>
+        <!-- PAR -->
+        <td>
+        </td>
+        <!-- JAR -->
+        <td>
+        </td>
+        <!-- RAR -->
+        <td>
+        </td>
+        <!-- TE -->
+        <td>
+        </td>
+        <!-- DPoP -->
+        <td> </td>
+        <!-- mTLS -->
+        <td> </td>
+        <!-- CIBA -->
+        <td> </td>
+        <!-- BCLO -->
+        <td> </td>
+    </tr>
 </tbody>
 </table>
 
 #### Auth0 Specific Features
 
+<table>
+<thead>
+    <tr>
+        <th>SDK</th>
+        <th><a href="https://auth0.com/docs/api/management/v2">API2</a></th>
+        <th><a href="https://auth0.com/docs/api/authentication#multi-factor-authentication">MFA</a></th>
+        <th><a href="https://auth0.com/docs/authenticate/passwordless/implement-login/embedded-login/relevant-api-endpoints">Passwordless</a> </th>
+        <!--<th><a href="https://auth0.com/docs/native-passkeys-api">Native Passkey</a> </th>-->
+        <th>MCD</th>
+        <th>MRRT</th>
+        <th>FCAT</th>
+        <th>MyAccount/MyOrg</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <!-- SDK -->
+        <td><a href="https://github.com/auth0/auth0-java">auth0-java</a></td>
+        <!-- API2 -->
+        <td>:white_check_mark:</td>
+        <!-- MFA -->
+        <td></td>
+        <!-- Passwordless -->
+        <td></td>
+        <!-- MCD -->
+        <td></td>
+        <!-- MRRT -->
+        <td></td>
+        <!-- FCAT -->
+        <td></td>
+        <!-- MyAccount-->
+        <td></td>
+    </tr>
+    <tr>
+        <!-- SDK -->
+        <td></td>
+        <!-- API2 -->
+        <td></td>
+        <!-- MFA -->
+        <td></td>
+        <!-- Passwordless -->
+        <td></td>
+        <!-- MCD -->
+        <td></td>
+        <!-- MRRT -->
+        <td></td>
+        <!-- FCAT -->
+        <td></td>
+        <!-- MyAccount-->
+        <td></td>
+    </tr>
+</tbody>
+</table>
 | SDK | API2 | MFA | MCD | MRRT | FCAT | Native Passkey | MyAccount | Passwordless | Organizations | HTTP Client | Session
 Storage |
 | ---- | ---- | --- | ---- | ------ | ------ | ---------------- | ----------- | ------------ | ------------- |-------- | ----- |
