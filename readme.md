@@ -1,7 +1,6 @@
-# Auth0 SDK Gallery with Terraform
+# Auth0 SDK Gallery
 
-Collection of sample codes using [Auth0 SDK libraries](https://auth0.com/docs/libraries)
-and [Auth0 Terraform provider](https://registry.terraform.io/providers/auth0/auth0/latest/docs).
+Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libraries).
 
 * [next.js](./next.js/readme.md)
 * [java](./java/readme.md)
@@ -144,9 +143,10 @@ and [Auth0 Terraform provider](https://registry.terraform.io/providers/auth0/aut
     <tr>
         <th>SDK</th>
         <th><a href="https://auth0.com/docs/api/management/v2">API2</a></th>
+        <th><a href="https://auth0.com/docs/api/authentication/signup/create-a-new-user">Signup</a></th>
+        <th><a href="https://auth0.com/docs/api/authentication/resource-owner-password-flow/get-token">ROPG</a></th>
         <th><a href="https://auth0.com/docs/api/authentication#multi-factor-authentication">MFA</a></th>
         <th><a href="https://auth0.com/docs/authenticate/passwordless/implement-login/embedded-login/relevant-api-endpoints">Passwordless</a> </th>
-        <!--<th><a href="https://auth0.com/docs/native-passkeys-api">Native Passkey</a> </th>-->
         <th>MCD</th>
         <th>MRRT</th>
         <th>FCAT</th>
@@ -158,6 +158,10 @@ and [Auth0 Terraform provider](https://registry.terraform.io/providers/auth0/aut
         <!-- SDK -->
         <td><a href="https://github.com/auth0/auth0-java">auth0-java</a></td>
         <!-- API2 -->
+        <td>:white_check_mark:</td>
+        <!-- Signup -->
+        <td>:white_check_mark:</td>
+        <!-- ROPG -->
         <td>:white_check_mark:</td>
         <!-- MFA -->
         <td></td>
@@ -177,6 +181,10 @@ and [Auth0 Terraform provider](https://registry.terraform.io/providers/auth0/aut
         <td></td>
         <!-- API2 -->
         <td></td>
+        <!-- Signup -->
+        <td></td>
+        <!-- ROPG -->
+        <td></td>
         <!-- MFA -->
         <td></td>
         <!-- Passwordless -->
@@ -192,6 +200,59 @@ and [Auth0 Terraform provider](https://registry.terraform.io/providers/auth0/aut
     </tr>
 </tbody>
 </table>
+
+### Native Features
+
+<table>
+<thead>
+    <tr>
+        <th>SDK</th>
+        <th>Native SIWA</th>
+        <th>Native Google</th>
+        <th><a href="https://auth0.com/docs/native-passkeys-api">Native Passkey</a></th>
+        <th>Native to Web</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <-- SDK -->
+        <td>Android</td>
+        <-- SIWA -->
+        <td></td>
+        <-- Google -->
+        <td></td>
+        <-- Passkey -->
+        <td></td>
+        <-- NTW -->
+        <td></td>
+    </tr>
+    <tr>
+        <-- SDK -->
+        <td>iOS</td>
+        <-- SIWA -->
+        <td></td>
+        <-- Google -->
+        <td></td>
+        <-- Passkey -->
+        <td></td>
+        <-- NTW -->
+        <td></td>
+    </tr>
+    <tr>
+        <-- SDK -->
+        <td>React Native</td>
+        <-- SIWA -->
+        <td></td>
+        <-- Google -->
+        <td></td>
+        <-- Passkey -->
+        <td></td>
+        <-- NTW -->
+        <td></td>
+    </tr>
+</tbody>
+</table>
+
 
 ## SDK Graph
 
