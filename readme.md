@@ -201,14 +201,36 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
 </tbody>
 </table>
 
-### Native Features
+### Browser SDKs
+<table>
+<thead>
+    <tr>
+        <th>SDK</th>
+        <td>geTokenSilently(cookie)</td>
+        <td>geTokenSilently(RRT)</td>
+        <td>loginWithPopup</td>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <!-- SDK -->
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</tbody>
+</table>
+
+### Native SDKs
 
 <table>
 <thead>
     <tr>
         <th>SDK</th>
-        <th>Native SIWA</th>
+        <th>Native Apple</th>
         <th>Native Google</th>
+        <th>Native Facebook</th>
         <th><a href="https://auth0.com/docs/native-passkeys-api">Native Passkey</a></th>
         <th>Native to Web</th>
     </tr>
@@ -221,6 +243,8 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
         <td>N/A</td>
         <!-- Google -->
         <td></td>
+        <!-- Facebook -->
+        <td></td>
         <!-- Passkey -->
         <td></td>
         <!-- NTW -->
@@ -230,7 +254,7 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
         <!-- SDK -->
         <td><a href="https://github.com/auth0/Auth0.swift">Auth0.swift</a></td>
         <!-- SIWA -->
-        <td>:white_check_mark:</td>
+        <td><a href="https://auth0.com/docs/quickstart/native/ios-swift">:white_check_mark:</a></td>
         <!-- Google -->
         <td></td>
         <!-- Passkey -->
@@ -245,6 +269,8 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
         <td></td>
         <!-- Google -->
         <td></td>
+        <!-- Facebook -->
+        <td></td>
         <!-- Passkey -->
         <td></td>
         <!-- NTW -->
@@ -256,6 +282,8 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
         <!-- SIWA -->
         <td></td>
         <!-- Google -->
+        <td></td>
+        <!-- Facebook -->
         <td></td>
         <!-- Passkey -->
         <td></td>
