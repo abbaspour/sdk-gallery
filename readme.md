@@ -28,6 +28,9 @@ and [Auth0 Terraform provider](https://registry.terraform.io/providers/auth0/aut
             <a href="https://datatracker.ietf.org/doc/html/rfc7636">PKCE</a>
         </th>
         <th>
+            <a href="https://datatracker.ietf.org/doc/html/rfc7523">JWT-CA</a>
+        </th>
+        <th>
             <a href="https://datatracker.ietf.org/doc/html/rfc8628">DAG</a>
         </th>
         <th>
@@ -58,16 +61,50 @@ and [Auth0 Terraform provider](https://registry.terraform.io/providers/auth0/aut
 </thead>
 <tbody>
     <tr>
+        <!-- SDK -->
         <td> <a href="https://github.com/auth0/auth0-java">auth0-java</a></td>
+        <!-- OAuth 2.1 -->
         <td> :white_check_mark: </td>
-        <td> <a href="https://github.com/auth0/java-jwt">java-jwt</a> :done: </td>
+        <!-- JWT --> 
+        <td> <a href="https://github.com/auth0/java-jwt">:white_check_mark:</a>  </td>
+        <!-- PKCE --> 
+        <td> <a href="https://auth0.com/blog/pkce-in-web-applications-with-spring-security/">:white_check_mark:</a> </td>
+        <!-- JWT-CA -->
+        <td> :x:
+        </td>
+        <!-- DAG -->
+        <td> :x:
+        </td>
+        <!-- PAR -->
+        <td>
+            <a href="https://javadoc.io/doc/com.auth0/auth0/latest/com/auth0/client/auth/AuthAPI.html#pushedAuthorizationRequest(java.lang.String,java.lang.String,java.util.Map)">:white_check_mark:</a>
+        </td>
+        <!-- JAR -->
+        <td>
+            <a href="https://javadoc.io/doc/com.auth0/auth0/latest/com/auth0/client/auth/AuthAPI.html#authorizeUrlWithJAR(java.lang.String)">:white_check_mark:</a>
+        </td>
+        <!-- RAR -->
+        <td>
+            <a href="https://javadoc.io/doc/com.auth0/auth0/latest/com/auth0/client/auth/AuthAPI.html#pushedAuthorizationRequest(java.lang.String,java.lang.String,java.util.Map,java.util.List)">:white_check_mark:</a>
+        </td>
+        <!-- TE -->
+        <td>
+        </td>
+        <!-- DPoP -->
+        <td> :x: </td>
+        <!-- mTLS -->
+        <td> :x: </td>
+        <!-- CIBA -->
+        <td> :x: </td>
+        <!-- BCLO -->
+        <td> :x: </td>
     </tr>
 </tbody>
 </table>
 
 #### Auth0 Specific Features
 
-| SDK | API2 | MCD | MRRT | FCAT | Native Passkey | MyAccount | Passwordless | Organizations | HTTP Client | Session
+| SDK | API2 | MFA | MCD | MRRT | FCAT | Native Passkey | MyAccount | Passwordless | Organizations | HTTP Client | Session
 Storage |
 | ---- | ---- | --- | ---- | ------ | ------ | ---------------- | ----------- | ------------ | ------------- |-------- | ----- |
 | <a href="https://github.com/auth0/auth0-java">auth0-java</a> | x | xxx |
