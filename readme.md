@@ -206,9 +206,9 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
 <thead>
     <tr>
         <th>SDK</th>
-        <td>geTokenSilently(cookie)</td>
-        <td>geTokenSilently(RRT)</td>
-        <td>loginWithPopup</td>
+        <th>geTokenSilently(cookie)</th>
+        <th>geTokenSilently(RRT)</th>
+        <th>loginWithPopup</th>
     </tr>
 </thead>
 <tbody>
@@ -256,6 +256,8 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
         <!-- SIWA -->
         <td><a href="https://auth0.com/docs/quickstart/native/ios-swift">:white_check_mark:</a></td>
         <!-- Google -->
+        <td></td>
+        <!-- Facebook -->
         <td></td>
         <!-- Passkey -->
         <td></td>
