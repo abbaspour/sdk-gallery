@@ -216,7 +216,31 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
 <tbody>
     <tr>
         <!-- SDK -->
-        <td>Android</td>
+        <td><a href="https://github.com/auth0/Auth0.Android">Auth0.Android</a></td>
+        <!-- SIWA -->
+        <td>N/A</td>
+        <!-- Google -->
+        <td></td>
+        <!-- Passkey -->
+        <td></td>
+        <!-- NTW -->
+        <td></td>
+    </tr>
+    <tr>
+        <!-- SDK -->
+        <td><a href="https://github.com/auth0/Auth0.swift">Auth0.swift</a></td>
+        <!-- SIWA -->
+        <td>:white_check_mark:</td>
+        <!-- Google -->
+        <td></td>
+        <!-- Passkey -->
+        <td></td>
+        <!-- NTW -->
+        <td></td>
+    </tr>
+    <tr>
+        <!-- SDK -->
+        <td><a href="https://github.com/auth0/react-native-auth0">react-native-auth0</a></td>
         <!-- SIWA -->
         <td></td>
         <!-- Google -->
@@ -228,19 +252,7 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
     </tr>
     <tr>
         <!-- SDK -->
-        <td>iOS</td>
-        <!-- SIWA -->
-        <td></td>
-        <!-- Google -->
-        <td></td>
-        <!-- Passkey -->
-        <td></td>
-        <!-- NTW -->
-        <td></td>
-    </tr>
-    <tr>
-        <!-- SDK -->
-        <td>React Native</td>
+        <td><a href="https://github.com/auth0/auth0-flutter">auth0-flutter</a></td>
         <!-- SIWA -->
         <td></td>
         <!-- Google -->
