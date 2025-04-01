@@ -22,6 +22,9 @@ and [Auth0 Terraform provider](https://registry.terraform.io/providers/auth0/aut
             <a href="https://datatracker.ietf.org/doc/draft-ietf-oauth-v2-1/">OAuth 2.1</a>
         </th>
         <th>
+            <a href="https://datatracker.ietf.org/doc/html/rfc7519">JWT</a>
+        </th>
+        <th>
             <a href="https://datatracker.ietf.org/doc/html/rfc7636">PKCE</a>
         </th>
         <th>
@@ -55,16 +58,17 @@ and [Auth0 Terraform provider](https://registry.terraform.io/providers/auth0/aut
 </thead>
 <tbody>
     <tr>
-        <td>java
-        </td>
+        <td>[java](https://github.com/auth0/auth0-java)</td>
+        <td> :white_check_mark: </td>
+        <td> :x: </td>
     </tr>
 </tbody>
 </table>
 
 #### Auth0 Specific Features
 
-| SDK | MCD | MRRT | FCAT |
-|-----|-----|------|------|
+| SDK | MCD | MRRT | FCAT | Native Passkey | MyAccount API | Passwordless API |
+|-----|-----|------|------|----------------|---------------|------------------|
 
 ## Sample User
 
