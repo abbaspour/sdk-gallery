@@ -215,39 +215,39 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
 </thead>
 <tbody>
     <tr>
-        <-- SDK -->
+        <!-- SDK -->
         <td>Android</td>
-        <-- SIWA -->
+        <!-- SIWA -->
         <td></td>
-        <-- Google -->
+        <!-- Google -->
         <td></td>
-        <-- Passkey -->
+        <!-- Passkey -->
         <td></td>
-        <-- NTW -->
+        <!-- NTW -->
         <td></td>
     </tr>
     <tr>
-        <-- SDK -->
+        <!-- SDK -->
         <td>iOS</td>
-        <-- SIWA -->
+        <!-- SIWA -->
         <td></td>
-        <-- Google -->
+        <!-- Google -->
         <td></td>
-        <-- Passkey -->
+        <!-- Passkey -->
         <td></td>
-        <-- NTW -->
+        <!-- NTW -->
         <td></td>
     </tr>
     <tr>
-        <-- SDK -->
+        <!-- SDK -->
         <td>React Native</td>
-        <-- SIWA -->
+        <!-- SIWA -->
         <td></td>
-        <-- Google -->
+        <!-- Google -->
         <td></td>
-        <-- Passkey -->
+        <!-- Passkey -->
         <td></td>
-        <-- NTW -->
+        <!-- NTW -->
         <td></td>
     </tr>
 </tbody>
