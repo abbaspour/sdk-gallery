@@ -63,7 +63,7 @@ and [Auth0 Terraform provider](https://registry.terraform.io/providers/auth0/aut
     <tr>
         <!-- SDK -->
         <td><a href="https://github.com/auth0/auth0-java">auth0-java</a></td>
-        <!-- OAuth 2.1 -->
+        <!-- OAuth2.1 -->
         <td> :white_check_mark: </td>
         <!-- JWT --> 
         <td> <a href="https://github.com/auth0/java-jwt">:white_check_mark:</a>  </td>
@@ -88,8 +88,7 @@ and [Auth0 Terraform provider](https://registry.terraform.io/providers/auth0/aut
             <a href="https://javadoc.io/doc/com.auth0/auth0/latest/com/auth0/client/auth/AuthAPI.html#pushedAuthorizationRequest(java.lang.String,java.lang.String,java.util.Map,java.util.List)">:white_check_mark:</a>
         </td>
         <!-- TE -->
-        <td>
-        </td>
+        <td> :x: </td>
         <!-- DPoP -->
         <td> :x: </td>
         <!-- mTLS -->
@@ -193,16 +192,13 @@ and [Auth0 Terraform provider](https://registry.terraform.io/providers/auth0/aut
     </tr>
 </tbody>
 </table>
-| SDK | API2 | MFA | MCD | MRRT | FCAT | Native Passkey | MyAccount | Passwordless | Organizations | HTTP Client | Session
-Storage |
-| ---- | ---- | --- | ---- | ------ | ------ | ---------------- | ----------- | ------------ | ------------- |-------- | ----- |
-| <a href="https://github.com/auth0/auth0-java">auth0-java</a> | x | xxx |
-
-## Sample User
-
-* Database: `user@atko.email`
-* Password: see `./tf/terraform.auto.tfvars`
 
 ## SDK Graph
 
 ![SDK graph](./graph/authentication.png)
+
+## Sample User
+
+* Database: `user@atko.email`
+* Password: `awk -F= '/^auth0_sample_password/{print $2}' ./tf/terraform.auto.tfvars`
+
