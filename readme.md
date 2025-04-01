@@ -31,7 +31,7 @@ and [Auth0 Terraform provider](https://registry.terraform.io/providers/auth0/aut
             <a href="https://datatracker.ietf.org/doc/html/rfc8628">DAG</a>
         </th>
         <th>
-            <a href="https://datatracker.ietf.org/doc/rfc9126/">PAR</a>
+            <a href="https://datatracker.ietf.org/doc/html/rfc9126">PAR</a>
         </th>
         <th>
             <a href="https://datatracker.ietf.org/doc/html/rfc9101">JAR</a>
@@ -58,17 +58,19 @@ and [Auth0 Terraform provider](https://registry.terraform.io/providers/auth0/aut
 </thead>
 <tbody>
     <tr>
-        <td>[java](https://github.com/auth0/auth0-java)</td>
+        <td> <a href="https://github.com/auth0/auth0-java">auth0-java</a></td>
         <td> :white_check_mark: </td>
-        <td> :x: </td>
+        <td> <a href="https://github.com/auth0/java-jwt">java-jwt</a> :done: </td>
     </tr>
 </tbody>
 </table>
 
 #### Auth0 Specific Features
 
-| SDK | MCD | MRRT | FCAT | Native Passkey | MyAccount API | Passwordless API |
-|-----|-----|------|------|----------------|---------------|------------------|
+| SDK | API2 | MCD | MRRT | FCAT | Native Passkey | MyAccount | Passwordless | Organizations | HTTP Client | Session
+Storage |
+| ---- | ---- | --- | ---- | ------ | ------ | ---------------- | ----------- | ------------ | ------------- |-------- | ----- |
+| <a href="https://github.com/auth0/auth0-java">auth0-java</a> | x | xxx |
 
 ## Sample User
 
