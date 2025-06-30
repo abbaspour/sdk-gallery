@@ -87,7 +87,7 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
             <a href="https://javadoc.io/doc/com.auth0/auth0/latest/com/auth0/client/auth/AuthAPI.html#pushedAuthorizationRequest(java.lang.String,java.lang.String,java.util.Map,java.util.List)">:white_check_mark:</a>
         </td>
         <!-- TE -->
-        <td> :x: </td>
+        <td> <a href="https://auth0.com/docs/custom-token-exchange-early-access">:x:</a> </td>
         <!-- DPoP -->
         <td> :x: </td>
         <!-- mTLS -->
@@ -233,11 +233,12 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
         <th>Native Facebook</th>
         <th><a href="https://auth0.com/docs/native-passkeys-api">Native Passkey</a></th>
         <th>Native to Web</th>
+        <th>Attestation</th>
     </tr>
 </thead>
 <tbody>
     <tr>
-        <!-- SDK -->
+        <!-- Auth0.Android SDK -->
         <td><a href="https://github.com/auth0/Auth0.Android">Auth0.Android</a></td>
         <!-- SIWA -->
         <td>N/A</td>
@@ -249,9 +250,11 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
         <td></td>
         <!-- NTW -->
         <td></td>
+        <!-- Attestation -->
+        <td></td>
     </tr>
     <tr>
-        <!-- SDK -->
+        <!-- Auth0.swift SDK -->
         <td><a href="https://github.com/auth0/Auth0.swift">Auth0.swift</a></td>
         <!-- SIWA -->
         <td><a href="https://auth0.com/docs/quickstart/native/ios-swift">:white_check_mark:</a></td>
@@ -263,9 +266,11 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
         <td></td>
         <!-- NTW -->
         <td></td>
+        <!-- Attestation -->
+        <td></td>
     </tr>
     <tr>
-        <!-- SDK -->
+        <!-- react-native-auth0 SDK -->
         <td><a href="https://github.com/auth0/react-native-auth0">react-native-auth0</a></td>
         <!-- SIWA -->
         <td></td>
@@ -277,9 +282,11 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
         <td></td>
         <!-- NTW -->
         <td></td>
+        <!-- Attestation -->
+        <td></td>
     </tr>
     <tr>
-        <!-- SDK -->
+        <!-- auth0-flutter SDK -->
         <td><a href="https://github.com/auth0/auth0-flutter">auth0-flutter</a></td>
         <!-- SIWA -->
         <td></td>
@@ -290,6 +297,8 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
         <!-- Passkey -->
         <td></td>
         <!-- NTW -->
+        <td></td>
+        <!-- Attestation -->
         <td></td>
     </tr>
 </tbody>
