@@ -99,3 +99,31 @@ spring.security.oauth2.client.provider.auth0.issuer-uri=https://${var.auth0_doma
 
 EOF
 }
+
+## java-spring-security4-api
+resource "auth0_resource_server" "java-rs" {
+  identifier = "java.rs"
+  signing_alg = "RS256"
+}
+
+resource "auth0_resource_server_scopes" "java-rs-scopes" {
+  resource_server_identifier = auth0_resource_server.java-rs.identifier
+
+  scopes {
+    name = "private"
+  }
+}
+
+
+resource "local_file" "java-spring-security4-api-application-properties" {
+  filename = "${path.module}/../java/java-spring-security4-api/src/main/resources/application.properties"
+  content = <<EOF
+# Created by terraform
+# Auth0 Configuration
+auth0.audience=${auth0_resource_server.java-rs.identifier}
+auth0.issuer=https://${var.auth0_domain}/
+
+# Server Configuration
+server.port=8080
+EOF
+}
