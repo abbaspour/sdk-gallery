@@ -12,5 +12,6 @@
         <module>./java/java-minimal-jetty</module>
         <module>./java/java-spring-boot</module>
         <module>./java/java-spring-security4-api</module>
+        <module>./java/java-spring-boot-oauth2-resource-server</module>
     </modules>
 </project>
