@@ -1,6 +1,7 @@
 package net.abbaspour.auth0.oauth2.resourceserver.controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,6 +41,7 @@ public class ApiController {
     }
 
     @GetMapping("/applications")
+    @PreAuthorize("hasAuthority('SCOPE_read')")
     public ResponseEntity<List<Map<String, Object>>> getApplications() {
         List<Map<String, Object>> applications = new ArrayList<>();
 
@@ -77,6 +79,7 @@ public class ApiController {
     }
 
     @GetMapping("/applications/{id}")
+    @PreAuthorize("hasAuthority('SCOPE_read')")
     public ResponseEntity<Map<String, Object>> getApplicationById(@PathVariable int id) {
         // Create a sample application based on the provided ID
         Map<String, Object> application = new HashMap<>();

@@ -7,7 +7,7 @@ all: build
 # Build the project with Maven
 .PHONY: build
 build:
-	mvn clean package
+	mvn package
 
 # Run the project with Maven
 .PHONY: run
