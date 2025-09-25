@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Auth0 SPA JS - Minimal</title>
+    <style>
+      body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; margin: 2rem; }
+      .hidden { display: none; }
+      #profile img { border-radius: 50%; width: 64px; height: 64px; }
+      button { padding: .6rem 1rem; font-size: 1rem; cursor: pointer; }
+      pre { background: #f6f8fa; padding: 1rem; overflow: auto; }
+    </style>
+    <!-- Auth0 SPA JS from CDN -->
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.4/auth0-spa-js.production.js" defer></script>
+  </head>
+  <body>
+    <h1>Auth0 SPA JS - Minimal</h1>
+
+    <div id="status">Loading...</div>
+
+    <div id="actions" class="hidden">
+      <button id="btn-login">Log In</button>
+      <button id="btn-logout" class="hidden">Log Out</button>
+    </div>
+
+    <section id="profile" class="hidden">
+      <h2>Profile</h2>
+      <div id="profile-content">
+        <img id="avatar" alt="avatar" />
+        <div>
+          <div><strong id="name"></strong></div>
+          <div id="email"></div>
+        </div>
+      </div>
+      <h3>Raw user info</h3>
+      <pre id="raw"></pre>
+    </section>
+
+    <script>
+      // Utility selectors
+      const $ = (sel) => document.querySelector(sel);
+
+      // Load config then initialize Auth0 client
+      async function loadConfig() {
+        const res = await fetch('./auth_config.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error('Missing auth_config.json. Run Terraform to generate it.');
+        const cfg = await res.json();
+        // Ensure redirect_uri defaults to this origin
+        cfg.authorizationParams = cfg.authorizationParams || {};
+        if (!cfg.authorizationParams.redirect_uri) {
+          cfg.authorizationParams.redirect_uri = window.location.origin + '/';
+        }
+        return cfg;
+      }
+
+      async function init() {
+        try {
+          const config = await loadConfig();
+          const auth0Client = await auth0.createAuth0Client({
+            domain: config.domain,
+            clientId: config.clientId,
+            authorizationParams: Object.assign({
+              redirect_uri: config.authorizationParams.redirect_uri
+            }, config.authorizationParams || {})
+          });
+
+          // If redirected back from Auth0, handle the code exchange
+          const params = new URLSearchParams(window.location.search);
+          if (params.has('code') && params.has('state')) {
+            $('#status').textContent = 'Completing login...';
+            await auth0Client.handleRedirectCallback();
+            // Clean the query string
+            window.history.replaceState({}, document.title, window.location.pathname);
+          }
+
+          // Check if authenticated (local)
+          let authenticated = await auth0Client.isAuthenticated();
+
+          // If not authenticated, try silent SSO using session at Auth0
+          if (!authenticated) {
+            try {
+              await auth0Client.getTokenSilently();
+              authenticated = await auth0Client.isAuthenticated();
+            } catch (e) {
+              // Silent auth failed; user might need to click Login
+            }
+          }
+
+          if (authenticated) {
+            $('#status').textContent = 'You are logged in.';
+            $('#btn-login').classList.add('hidden');
+            $('#btn-logout').classList.remove('hidden');
+
+            const user = await auth0Client.getUser();
+            if (user) {
+              $('#profile').classList.remove('hidden');
+              $('#name').textContent = user.name || '';
+              $('#email').textContent = user.email || '';
+              if (user.picture) $('#avatar').src = user.picture;
+              $('#raw').textContent = JSON.stringify(user, null, 2);
+            }
+          } else {
+            $('#status').textContent = 'You are logged out.';
+            $('#btn-login').classList.remove('hidden');
+            $('#btn-logout').classList.add('hidden');
+            $('#profile').classList.add('hidden');
+          }
+
+          // Wire up buttons
+          $('#actions').classList.remove('hidden');
+          $('#btn-login').addEventListener('click', async () => {
+            await auth0Client.loginWithRedirect();
+          });
+          $('#btn-logout').addEventListener('click', async () => {
+            await auth0Client.logout({ logoutParams: { returnTo: window.location.origin + '/' } });
+          });
+        } catch (e) {
+          console.error(e);
+          $('#status').textContent = 'Error: ' + e.message;
+        }
+      }
+
+      window.addEventListener('DOMContentLoaded', init);
+    </script>
+
+    <hr />
+  </body>
+</html>

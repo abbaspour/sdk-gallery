@@ -51,6 +51,7 @@ digraph "Authentication" {
     "ruby-auth0" [URL="https://github.com/auth0/ruby-auth0", target="_blank", style=filled, fillcolor=lightblue];
     "node-jwks-rsa" [URL="https://github.com/auth0/node-jwks-rsa", target="_blank", style=filled, fillcolor=lightgreen];
     "jsonwebtoken" [URL="https://github.com/auth0/node-jsonwebtoken", target="_blank", style=filled, fillcolor=lightgreen];
+    "express-jwt" [URL="https://github.com/auth0/express-jwt", target="_blank", style=filled, fillcolor=violet];
     "express-jwt-authz" [URL="https://github.com/auth0/express-jwt-authz", target="_blank", style=filled, fillcolor=violet];
     "node-oauth2-jwt-bearer" [URL="https://github.com/auth0/node-oauth2-jwt-bearer/", target="_blank", style=filled, fillcolor=violet];
     "express-openid-connect" [URL="https://github.com/auth0/express-openid-connect", target="_blank", style=filled, fillcolor=lightblue];
@@ -103,6 +104,7 @@ digraph "Authentication" {
     "node.js" -> "passport-auth0";
 
     "node.js" -> "jsonwebtoken";
+    "node.js" -> "express-jwt";
     "node.js" -> "express-jwt-authz";
     "node.js" -> "node-oauth2-jwt-bearer";
     "node.js" -> "express-openid-connect";

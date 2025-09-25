@@ -1,0 +1,12 @@
+name = "minimal-spa-js"
+compatibility_date = "2025-09-20"
+preview_urls = false
+workers_dev = true
+
+#routes = [
+#    { pattern = "admin.replate.dev/*", zone_name = "replate.dev" }
+#]
+
+[assets]
+directory = "./public"
+not_found_handling = "single-page-application"
