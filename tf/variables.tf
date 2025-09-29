@@ -33,3 +33,17 @@ variable "auth0_sample_password" {
   type        = string
   sensitive   = true
 }
+
+## cloudflare
+/*
+variable "cloudflare_api_key" {
+  description = "Cloudflare API Key"
+  type = string
+  sensitive = true
+}
+
+variable "cloudflare_email" {
+  description = "Cloudflare Account Email"
+  type = string
+}
+*/

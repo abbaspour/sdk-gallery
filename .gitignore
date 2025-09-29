@@ -4,3 +4,4 @@ node_modules
 .env.local
 pnpm-lock.yaml
 target
+auth_config.json
