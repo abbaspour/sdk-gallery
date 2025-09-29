@@ -35,13 +35,15 @@ variable "auth0_sample_password" {
 }
 
 ## cloudflare
-variable "cloudflare_api_token" {
-  description = "Cloudflare API token with permissions to manage Workers"
-  type        = string
-  sensitive   = true
+/*
+variable "cloudflare_api_key" {
+  description = "Cloudflare API Key"
+  type = string
+  sensitive = true
 }
 
-variable "cloudflare_account_id" {
-  description = "Cloudflare Account ID"
-  type        = string
+variable "cloudflare_email" {
+  description = "Cloudflare Account Email"
+  type = string
 }
+*/

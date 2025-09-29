@@ -12,10 +12,12 @@ terraform {
       source  = "hashicorp/local"
       version = "2.5.2"
     }
+    /*
     cloudflare = {
       source  = "cloudflare/cloudflare"
       version = "~> 5.10.1"
     }
+    */
   }
 }
 
@@ -30,7 +32,9 @@ provider "auth0" {
   debug         = "true"
 }
 
+/*
 provider "cloudflare" {
-  api_token = var.cloudflare_api_token
-  account_id = var.cloudflare_account_id
+  email   = var.cloudflare_email
+  api_key = var.cloudflare_api_key
 }
+*/

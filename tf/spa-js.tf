@@ -11,26 +11,14 @@ resource "auth0_client" "spa-js-minimal" {
 
   callbacks = [
     local.spa-js-minimal-worker-url,
-    "http://localhost:3000/",
-    "http://localhost:5173/",
-    "http://localhost:8080/",
-    "http://localhost:5500/"
   ]
 
   allowed_logout_urls = [
     local.spa-js-minimal-worker-url,
-    "http://localhost:3000/",
-    "http://localhost:5173/",
-    "http://localhost:8080/",
-    "http://localhost:5500/"
   ]
 
   web_origins = [
     local.spa-js-minimal-worker-url,
-    "http://localhost:3000",
-    "http://localhost:5173",
-    "http://localhost:8080",
-    "http://localhost:5500"
   ]
 
   jwt_configuration {
