@@ -3,3 +3,4 @@ terraform.auto.tfvars
 terraform.tfstate*
 *.plan
 .terraform
+render
