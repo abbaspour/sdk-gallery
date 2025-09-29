@@ -12,6 +12,10 @@ terraform {
       source  = "hashicorp/local"
       version = "2.5.2"
     }
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "~> 5.10.1"
+    }
   }
 }
 
@@ -24,4 +28,9 @@ provider "auth0" {
   client_id     = var.auth0_tf_client_id
   client_secret = var.auth0_tf_client_secret
   debug         = "true"
+}
+
+provider "cloudflare" {
+  api_token = var.cloudflare_api_token
+  account_id = var.cloudflare_account_id
 }

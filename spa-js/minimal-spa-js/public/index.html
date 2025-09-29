@@ -22,6 +22,7 @@
     <div id="actions" class="hidden">
       <button id="btn-login">Log In</button>
       <button id="btn-logout" class="hidden">Log Out</button>
+      <button id="btn-token" class="hidden">Get Token Silently</button>
     </div>
 
     <section id="profile" class="hidden">
@@ -91,6 +92,7 @@
             $('#status').textContent = 'You are logged in.';
             $('#btn-login').classList.add('hidden');
             $('#btn-logout').classList.remove('hidden');
+            $('#btn-token').classList.remove('hidden');
 
             const user = await auth0Client.getUser();
             if (user) {
@@ -104,6 +106,7 @@
             $('#status').textContent = 'You are logged out.';
             $('#btn-login').classList.remove('hidden');
             $('#btn-logout').classList.add('hidden');
+            $('#btn-token').classList.add('hidden');
             $('#profile').classList.add('hidden');
           }
 
@@ -114,6 +117,23 @@
           });
           $('#btn-logout').addEventListener('click', async () => {
             await auth0Client.logout({ logoutParams: { returnTo: window.location.origin + '/' } });
+          });
+          $('#btn-token').addEventListener('click', async () => {
+            const btn = $('#btn-token');
+            const oldText = btn.textContent;
+            btn.disabled = true;
+            btn.textContent = 'Getting token...';
+            try {
+              const token = await auth0Client.getTokenSilently({cacheMode: "off"});
+              console.log('[DEBUG_LOG] Access Token:', token);
+              $('#status').textContent = 'Access token obtained. Check console.';
+            } catch (e) {
+              console.error(e);
+              $('#status').textContent = 'Error getting token: ' + e.message;
+            } finally {
+              btn.disabled = false;
+              btn.textContent = oldText;
+            }
           });
         } catch (e) {
           console.error(e);

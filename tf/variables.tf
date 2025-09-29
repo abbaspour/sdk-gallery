@@ -33,3 +33,15 @@ variable "auth0_sample_password" {
   type        = string
   sensitive   = true
 }
+
+## cloudflare
+variable "cloudflare_api_token" {
+  description = "Cloudflare API token with permissions to manage Workers"
+  type        = string
+  sensitive   = true
+}
+
+variable "cloudflare_account_id" {
+  description = "Cloudflare Account ID"
+  type        = string
+}
