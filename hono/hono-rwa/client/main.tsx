@@ -8,7 +8,7 @@ function Root() {
 
   useEffect(() => {
     let cancelled = false;
-    (async () => {
+      (async () => {
       try {
         const res = await fetch('/api/me', { credentials: 'include' });
         if (!res.ok) throw new Error('Failed to load session');

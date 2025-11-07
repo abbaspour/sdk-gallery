@@ -2,6 +2,9 @@ goal: build
 
 SECRETS_FILE = .env
 
+build-client:
+	npm run build:client
+
 build:
 	pnpm run build
 

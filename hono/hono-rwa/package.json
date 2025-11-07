@@ -4,7 +4,8 @@
     "description": "Example of Auth0 labs Hono SDK running RWA in Cloudflare Workers",
     "main": "src/index.ts",
     "scripts": {
-        "build:client": "esbuild client/main.tsx --bundle --format=esm --outfile=public/main.js --platform=browser --target=es2022 --minify --log-level=info",
+        "build:client:es": "esbuild client/main.tsx --bundle --format=esm --outfile=public/main.js --platform=browser --target=es2022 --minify --log-level=info",
+        "build:client": "tsup",
         "build": "npm run build:client && tsc",
         "dev": "wrangler dev src/index.ts",
         "format": "prettier --write ."
@@ -20,6 +21,7 @@
     "devDependencies": {
         "@cloudflare/workers-types": "^4.20250909.0",
         "typescript": "^5.9.2",
+        "tsup": "^8.5.0",
         "prettier": "^3.6.2",
         "wrangler": "^4.36.0",
         "esbuild": "^0.24.0",

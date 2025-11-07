@@ -3,8 +3,10 @@
 node_modules
 .env*
 pnpm-lock.yaml
+package-lock.json
 target/
 dist/
 .wrangler/
 main.js
+*.mjs*
 auth_config.json
