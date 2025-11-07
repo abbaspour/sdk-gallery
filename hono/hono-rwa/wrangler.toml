@@ -6,7 +6,7 @@ workers_dev = true
 preview_urls = true
 
 [build]
-    command = "npm run build"
+    command = "pnpm run build"
 
 [observability]
 enabled = true
