@@ -6,4 +6,5 @@ pnpm-lock.yaml
 target/
 dist/
 .wrangler/
+main.js
 auth_config.json

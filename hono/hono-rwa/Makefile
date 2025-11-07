@@ -3,7 +3,7 @@ goal: build
 SECRETS_FILE = .env
 
 build:
-	npm run build
+	pnpm run build
 
 deploy:
 	npx wrangler deploy
@@ -14,7 +14,7 @@ log:
 	npx wrangler tail
 
 format:
-	npm run format
+	pnpm run format
 
 update-cf-secrets:
 	npx wrangler secret bulk $(SECRETS_FILE)
