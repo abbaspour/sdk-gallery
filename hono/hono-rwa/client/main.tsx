@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import App, { type Me } from './App';
+import { Auth0ComponentProvider  } from '@auth0/web-ui-components-react';
 
 function Root() {
   const [me, setMe] = useState<Me | null>(null);
@@ -25,7 +26,9 @@ function Root() {
     };
   }, []);
 
-  return <App me={me} loading={loading} />;
+  return <Auth0ComponentProvider>
+        <App me={me} loading={loading} />
+    </Auth0ComponentProvider>;
 }
 
 const el = document.getElementById('root');
