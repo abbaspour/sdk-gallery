@@ -26,7 +26,8 @@ clean:
 lint:
 	tflint
 
-init: .terraform
+init:
+	$(TF) init -upgrade
 
 .terraform: provider.tf
 	$(TF) init

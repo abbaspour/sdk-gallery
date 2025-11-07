@@ -1,0 +1,23 @@
+{
+    "name": "hono-rwa",
+    "version": "0.1.0",
+    "description": "Example of Auth0 labs Hono SDK running RWA in Cloudflare Workers",
+    "main": "src/index.ts",
+    "scripts": {
+        "build": "tsc",
+        "dev": "wrangler dev src/index.ts",
+        "format": "prettier --write ."
+    },
+    "author": "Amin Abbaspour",
+    "license": "ISC",
+    "dependencies": {
+        "@auth0/auth0-hono": "^1.2.5",
+        "hono": "^4.10.4"
+    },
+    "devDependencies": {
+        "@cloudflare/workers-types": "^4.20250909.0",
+        "typescript": "^5.9.2",
+        "prettier": "^3.6.2",
+        "wrangler": "^4.36.0"
+    }
+}
