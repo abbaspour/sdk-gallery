@@ -26,7 +26,8 @@ function Root() {
     };
   }, []);
 
-  return <Auth0ComponentProvider>
+  // domain: 'id.replate.dev',
+  return <Auth0ComponentProvider authDetails={{authProxyUrl: '/proxy'}}>
         <App me={me} loading={loading} />
     </Auth0ComponentProvider>;
 }

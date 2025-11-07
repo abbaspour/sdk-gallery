@@ -1,4 +1,5 @@
 import React from 'react';
+import { UserMFAMgmt } from '@auth0/web-ui-components-react';
 
 export type Me = {
   authenticated: boolean;
@@ -28,6 +29,9 @@ export function App({ me, loading = false }: Props) {
                   <button onClick={() => (window.location.href = '/logout')} style={styles.button}>
                     Logout
                   </button>
+                </div>
+                <div className="card">
+                    <UserMFAMgmt />
                 </div>
               </>
             ) : (
