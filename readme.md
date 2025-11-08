@@ -4,6 +4,7 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
 
 * [next.js](./next.js/readme.md)
 * [java](./java/readme.md)
+* [hono](./hono/readme.md)
 
 ## Feature Matrix
 
