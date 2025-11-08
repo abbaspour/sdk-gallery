@@ -6,6 +6,7 @@
     "scripts": {
         "build:client:es": "esbuild client/main.tsx --bundle --format=esm --outfile=public/main.js --platform=browser --target=es2022 --minify --log-level=info",
         "build:client": "tsup",
+        "build:server": "tsc",
         "build": "npm run build:client && tsc",
         "dev": "wrangler dev src/index.ts",
         "format": "prettier --write ."

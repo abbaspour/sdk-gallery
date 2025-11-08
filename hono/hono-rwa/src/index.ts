@@ -16,6 +16,18 @@ const app = new Hono<OIDCEnv<Bindings>>();
 app.use(
     auth({
         routes: { login: '/login', callback: '/auth/callback', logout: '/logout' },
+        authorizationParams: {
+            scope: 'openid profile email offline_access'+
+                ' read:me:authentication_methods'+
+                ' delete:me:authentication_methods'+
+                ' update:me:authentication_methods'+
+                ' create:me:authentication_methods'+
+                ' read:me:factors'+
+                ' create:me:connected_accounts'+
+                ' read:me:connected_accounts'+
+                ' delete:me:connected_accounts',
+            audience: 'https://id.replate.dev/me',
+        },
         authRequired: false,
     })
 );

@@ -5,6 +5,9 @@ SECRETS_FILE = .env
 build-client:
 	npm run build:client
 
+build-server:
+	pnpm run build:server
+
 build:
 	pnpm run build
 
