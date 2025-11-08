@@ -1,7 +1,12 @@
 .vercel
 .next
 node_modules
-.env.local
+.env*
 pnpm-lock.yaml
-target
+package-lock.json
+target/
+dist/
+.wrangler/
+main.js
+*.mjs*
 auth_config.json

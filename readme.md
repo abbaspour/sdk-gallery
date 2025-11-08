@@ -4,6 +4,7 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
 
 * [next.js](./next.js/readme.md)
 * [java](./java/readme.md)
+* [hono](./hono/readme.md)
 
 ## Feature Matrix
 
@@ -99,9 +100,9 @@ Collection of sample codes for [Auth0 SDK libraries](https://auth0.com/docs/libr
     </tr>
     <tr>
         <!-- SDK -->
-        <td> </td>
+        <td> <a href="https://github.com/auth0-lab/auth0-hono">auth0-hono</a> </td>
         <!-- OAuth 2.1 -->
-        <td> </td>
+        <td> :white_check_mark: </td>
         <!-- JWT --> 
         <td>  </td>
         <!-- PKCE --> 

@@ -1,0 +1,99 @@
+import { Hono } from 'hono';
+import { auth, type OIDCEnv } from '@auth0/auth0-hono';
+
+type Bindings = {
+    AUTH0_DOMAIN: string;
+    AUTH0_CLIENT_ID: string;
+    AUTH0_CLIENT_SECRET: string;
+    BASE_URL: string;
+    AUTH0_SESSION_ENCRYPTION_KEY: string;
+};
+
+// Create the Hono app
+const app = new Hono<OIDCEnv<Bindings>>();
+
+// Configure auth middleware with custom routes and no global auth requirement
+app.use(
+    auth({
+        routes: { login: '/login', callback: '/auth/callback', logout: '/logout' },
+        authorizationParams: {
+            scope: 'openid profile email offline_access'+
+                ' read:me:authentication_methods'+
+                ' delete:me:authentication_methods'+
+                ' update:me:authentication_methods'+
+                ' create:me:authentication_methods'+
+                ' read:me:factors'+
+                ' create:me:connected_accounts'+
+                ' read:me:connected_accounts'+
+                ' delete:me:connected_accounts',
+            audience: 'https://id.replate.dev/me/',
+        },
+        authRequired: false,
+    })
+);
+
+// API endpoint to return current session info
+app.get('/api/me', async (c) => {
+    const session = await c.var.auth0Client?.getSession(c);
+    const authenticated = Boolean(session?.user);
+    const name =
+        (session?.user as any)?.name ||
+        (session?.user as any)?.nickname ||
+        (session?.user as any)?.email;
+
+    return c.json({ authenticated, ...(authenticated ? { name } : {}) });
+});
+
+// Authenticated proxy to Auth0 /me/v1/*
+app.all('/proxy/*', async (c) => {
+    // Ensure the user is authenticated
+    const session = await c.var.auth0Client?.getSession(c);
+    if (!session?.user) {
+        return c.text('Unauthorized', 401);
+    }
+
+    // Retrieve or refresh an access token using the refresh token stored in the session
+    // Uses @auth0/auth0-server-js via the ServerClient exposed by auth0-hono
+    let accessToken: string | undefined;
+    try {
+        const tokenSet = await c.var.auth0Client!.getAccessToken(c);
+        accessToken = tokenSet.accessToken;
+    } catch (e: any) {
+        // If we can't get an access token (e.g., no refresh token or refresh failed), require re-authentication
+        return c.text('Unauthorized', 401);
+    }
+
+    // Build target URL: AUTH0_DOMAIN/me/v1/<rest-of-path>?<query>
+    const prefix = '/proxy/me/';
+    const rest = c.req.path.startsWith(prefix) ? c.req.path.slice(prefix.length) : '';
+    const search = new URL(c.req.url).search;
+    const domain = (c.env.AUTH0_DOMAIN || '').replace(/\/$/, '');
+    const targetUrl = `https://${domain}/me/v1/${rest}${search}`;
+
+    // Forward method, headers, and body
+    const method = c.req.method;
+    const headers = new Headers(c.req.raw.headers);
+    // Ensure correct auth and host headers
+    headers.delete('host');
+    headers.delete('authorization');
+    headers.set('authorization', `Bearer ${accessToken}`);
+
+    const hasBody = !['GET', 'HEAD'].includes(method.toUpperCase());
+    const body = hasBody ? c.req.raw.body : undefined;
+
+    const resp = await fetch(targetUrl, {
+        method,
+        headers,
+        body,
+        redirect: 'manual',
+    });
+
+    // Stream back the response as-is
+    return new Response(resp.body, {
+        status: resp.status,
+        headers: resp.headers,
+    });
+});
+
+// noinspection JSUnusedGlobalSymbols
+export default app;

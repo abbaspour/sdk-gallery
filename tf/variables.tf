@@ -47,3 +47,19 @@ variable "cloudflare_email" {
   type = string
 }
 */
+
+## Hono
+variable "hono_client_id" {
+  type = string
+  description = "Hono client_id from another tenant"
+}
+
+variable "hono_client_secret" {
+  type = string
+  description = "Hono client_secret from another tenant"
+}
+
+variable "hono_domain" {
+  type = string
+  description = "Hono domain from another tenant"
+}
