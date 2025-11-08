@@ -15,6 +15,7 @@
     "license": "ISC",
     "dependencies": {
         "@auth0/auth0-hono": "^1.2.5",
+        "@auth0/auth0-server-js": "^1.1.0",
         "@auth0/auth0-react": "^2.4.0",
         "@auth0/web-ui-components-react": "file:../../components/auth0-web-ui-components-react-0.1.0-alpha.5",
         "hono": "^4.10.4",

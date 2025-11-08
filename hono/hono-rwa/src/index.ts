@@ -52,6 +52,17 @@ app.all('/proxy/*', async (c) => {
         return c.text('Unauthorized', 401);
     }
 
+    // Retrieve or refresh an access token using the refresh token stored in the session
+    // Uses @auth0/auth0-server-js via the ServerClient exposed by auth0-hono
+    let accessToken: string | undefined;
+    try {
+        const tokenSet = await c.var.auth0Client!.getAccessToken(c);
+        accessToken = tokenSet.accessToken;
+    } catch (e: any) {
+        // If we can't get an access token (e.g., no refresh token or refresh failed), require re-authentication
+        return c.text('Unauthorized', 401);
+    }
+
     // Build target URL: AUTH0_DOMAIN/me/v1/<rest-of-path>?<query>
     const prefix = '/proxy/me/';
     const rest = c.req.path.startsWith(prefix) ? c.req.path.slice(prefix.length) : '';
@@ -62,8 +73,10 @@ app.all('/proxy/*', async (c) => {
     // Forward method, headers, and body
     const method = c.req.method;
     const headers = new Headers(c.req.raw.headers);
-    // Let the runtime set the Host header
+    // Ensure correct auth and host headers
     headers.delete('host');
+    headers.delete('authorization');
+    headers.set('authorization', `Bearer ${accessToken}`);
 
     const hasBody = !['GET', 'HEAD'].includes(method.toUpperCase());
     const body = hasBody ? c.req.raw.body : undefined;
