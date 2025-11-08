@@ -26,7 +26,7 @@ app.use(
                 ' create:me:connected_accounts'+
                 ' read:me:connected_accounts'+
                 ' delete:me:connected_accounts',
-            audience: 'https://id.replate.dev/me',
+            audience: 'https://id.replate.dev/me/',
         },
         authRequired: false,
     })
