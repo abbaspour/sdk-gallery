@@ -1,0 +1,7 @@
+terraform.auto.tfvars
+.terraform.lock.hcl
+terraform.tfstate*
+*.plan
+.terraform
+render
+.terraform.tfstate.lock.info

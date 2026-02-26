@@ -1,0 +1,8 @@
+## auth0
+auth0_domain = "xxx.auth0.com"
+auth0_tf_client_id = "xxx"
+auth0_tf_client_secret = "xxxx"
+auth0_sample_password = "xxxx"
+
+## vercel (optional)
+vercel_api_token = "xxx"
