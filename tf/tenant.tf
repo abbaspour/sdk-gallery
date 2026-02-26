@@ -6,7 +6,7 @@ resource "auth0_tenant" "tenant_config" {
 }
 
 data "auth0_resource_server" "api_v2" {
-  identifier = "https://${var.auth0_domain}/api/v2/"
+  identifier = "https://${var.auth0_canonical_domain}/api/v2/"
 }
 
 data "auth0_connection" "Username-Password-Authentication" {
