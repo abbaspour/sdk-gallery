@@ -7,6 +7,7 @@ import {
 } from '@auth0/auth0-server-js';
 import { StoreOptions } from './types.js';
 import { ExpressCookieHandler } from './store/express-cookie-handler.js';
+import type { DomainResolver, DomainResolverContext } from '@auth0/auth0-server-js';
 
 export interface Auth0ExpressOptions {
   domain: string;
@@ -26,8 +27,18 @@ export function auth0(options: Auth0ExpressOptions) {
   const callbackPath = '/auth/callback';
   const redirectUri = new URL(callbackPath, options.appBaseUrl);
 
+  const defaultAuth0Domain = 'smcd-id.gallery.abbaspour.net';
+
+  const domainResolver: DomainResolver<StoreOptions> = async ({ storeOptions }: DomainResolverContext<StoreOptions>) => {
+    const host = storeOptions?.request?.headers.host;
+    if (!host) return defaultAuth0Domain;
+    if (host === 'local.abbaspour.net') return 'amcd-id.gallery.abbaspour.net';
+    return defaultAuth0Domain;
+  };
+
   const auth0Client = new ServerClient<StoreOptions>({
-    domain: options.domain,
+    //domain: options.domain,
+    domain: domainResolver,
     clientId: options.clientId,
     clientSecret: options.clientSecret,
     authorizationParams: {

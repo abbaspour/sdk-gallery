@@ -6,7 +6,8 @@ resource "auth0_client" "express-server-js-minimal" {
   is_first_party  = true
 
   callbacks = [
-    "http://localhost:3000/auth/callback"
+    "http://localhost:3000/auth/callback",
+    "http://local.abbaspour.net:4000/auth/callback"
   ]
 
   allowed_logout_urls = [
@@ -40,6 +41,7 @@ AUTH0_CLIENT_ID=${auth0_client.express-server-js-minimal.client_id}
 AUTH0_CLIENT_SECRET=${data.auth0_client.express-server-js-minimal.client_secret}
 AUTH0_SESSION_SECRET=${random_string.express-server-js_session_secret.result}
 APP_BASE_URL=http://localhost:3000/
+#APP_BASE_URL=http://local.abbaspour.net:4000/auth/callback
 EOF
 }
 
