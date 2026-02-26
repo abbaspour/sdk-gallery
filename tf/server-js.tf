@@ -39,7 +39,7 @@ resource "random_string" "auth0_session_secret" {
 }
 
 resource "local_sensitive_file" "server-js-cf-worker-env-local" {
-  filename = "/Users/amin/project/auth0/auth0-server-js/examples/example-cf-worker-web/.dev.vars"
+  filename = "~/project/auth0/auth0-server-js/examples/example-cf-worker-web/.dev.vars"
   content = <<EOF
 # Created by terraform
 AUTH0_DOMAIN=${var.auth0_domain}
