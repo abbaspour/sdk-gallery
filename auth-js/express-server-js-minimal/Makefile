@@ -1,5 +1,7 @@
 goal: build
 
+start: run
+
 run:
 	npm run start
 

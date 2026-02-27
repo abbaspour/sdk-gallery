@@ -31,8 +31,16 @@ export function auth0(options: Auth0ExpressOptions) {
 
   const domainResolver: DomainResolver<StoreOptions> = async ({ storeOptions }: DomainResolverContext<StoreOptions>) => {
     const host = storeOptions?.request?.headers.host;
-    if (!host) return defaultAuth0Domain;
-    if (host === 'local.abbaspour.net') return 'amcd-id.gallery.abbaspour.net';
+    console.log(`host: ${host}`);
+    if (!host) {
+      console.log(`no host. going with default ${defaultAuth0Domain}`);
+      return defaultAuth0Domain;
+    }
+    if (host === 'local.abbaspour.net:4000') {
+      console.log(`host is local.abbaspour.net. going to amcd`)
+      return 'amcd-id.gallery.abbaspour.net';
+    }
+    console.log(`going with default`);
     return defaultAuth0Domain;
   };
 
