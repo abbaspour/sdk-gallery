@@ -6,6 +6,11 @@ variable "vercel_api_token" {
 }
 
 ## auth0
+variable "auth0_canonical_domain" {
+  description = "The canonical domain of the Auth0 tenant"
+  type        = string
+}
+
 variable "auth0_domain" {
   description = "The domain of the Auth0 tenant"
   type        = string
