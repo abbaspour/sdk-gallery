@@ -17,10 +17,20 @@ export class MemorySessionStore implements SessionStore<StoreOptions> {
   }
 
   async deleteByLogoutToken(claims: LogoutTokenClaims, _options?: StoreOptions): Promise<void> {
+    const issuerDomain = claims.iss ? new URL(claims.iss).hostname : undefined;
+
     for (const [identifier, stateData] of this.store.entries()) {
       const matchesSid = claims.sid && stateData.internal?.sid === claims.sid;
       const matchesSub = claims.sub && stateData.user?.sub === claims.sub;
+
       if (matchesSid || matchesSub) {
+        if (issuerDomain && stateData.domain && issuerDomain !== stateData.domain) {
+          console.error(
+            `Backchannel logout ignored: token issuer domain "${issuerDomain}" ` +
+            `does not match session domain "${stateData.domain}" for session "${identifier}".`
+          );
+          continue;
+        }
         this.store.delete(identifier);
       }
     }
