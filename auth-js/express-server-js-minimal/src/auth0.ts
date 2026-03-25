@@ -3,10 +3,11 @@ import express from 'express';
 import {
   CookieTransactionStore,
   ServerClient,
-  StatelessStateStore,
+  StatefulStateStore,
 } from '@auth0/auth0-server-js';
 import { StoreOptions } from './types.js';
 import { ExpressCookieHandler } from './store/express-cookie-handler.js';
+import { MemorySessionStore } from './store/memory-session-store.js';
 import type { DomainResolver, DomainResolverContext } from '@auth0/auth0-server-js';
 
 export interface Auth0ExpressOptions {
@@ -31,16 +32,16 @@ export function auth0(options: Auth0ExpressOptions) {
 
   const domainResolver: DomainResolver<StoreOptions> = async ({ storeOptions }: DomainResolverContext<StoreOptions>) => {
     const host = storeOptions?.request?.headers.host;
-    console.log(`host: ${host}`);
+    //console.log(`host: ${host}`);
     if (!host) {
-      console.log(`no host. going with default ${defaultAuth0Domain}`);
+      //console.log(`no host. going with default ${defaultAuth0Domain}`);
       return defaultAuth0Domain;
     }
-    if (host === 'local.abbaspour.net:4000') {
-      console.log(`host is local.abbaspour.net. going to amcd`)
+    if (host === 'local.abbaspour.net:4000' || host === 'local.abbaspour.net') {
+      //console.log(`host is local.abbaspour.net. going to amcd`)
       return 'amcd-id.gallery.abbaspour.net';
     }
-    console.log(`going with default`);
+    //console.log(`going with default`);
     return defaultAuth0Domain;
   };
 
@@ -58,9 +59,10 @@ export function auth0(options: Auth0ExpressOptions) {
       },
       new ExpressCookieHandler()
     ),
-    stateStore: new StatelessStateStore(
+    stateStore: new StatefulStateStore(
       {
         secret: options.sessionSecret,
+        store: new MemorySessionStore(),
       },
       new ExpressCookieHandler()
     ),
@@ -92,6 +94,25 @@ export function auth0(options: Auth0ExpressOptions) {
 
     response.redirect(appState?.returnTo ?? options.appBaseUrl);
   });
+
+  router.post('/auth/backchannel-logout',
+    express.urlencoded({ extended: false }),
+    async (request: Request, response: Response) => {
+      const logoutToken = request.body?.logout_token;
+      if (!logoutToken) {
+        response.status(400).send('Missing logout_token');
+        return;
+      }
+      console.log(`logoutToken: ${logoutToken}`);
+      try {
+        await request.auth0Client.handleBackchannelLogout(logoutToken, { request, response });
+        response.status(204).send();
+      } catch (err) {
+        console.error('Backchannel logout error:', err);
+        response.status(400).send('Logout token invalid');
+      }
+    }
+  );
 
   router.get('/auth/logout', async (request: Request, response: Response) => {
     const returnTo = options.appBaseUrl;

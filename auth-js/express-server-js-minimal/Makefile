@@ -7,3 +7,6 @@ run:
 
 build:
 	npm run build
+
+tunnel:
+	cloudflared tunnel --url http://localhost:4000
